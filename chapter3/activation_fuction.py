@@ -16,17 +16,22 @@ def step_function2(x):
     y = x > 0
     return y.astype(int)
 
-# 계단함수 출력
-x = np.arange(-5.0, 5.0, 0.1)
-y = step_function2(x)
-plt.plot(x, y)
-plt.ylim(-0.1, 1.1)  # y축의 범위 지정
-plt.show()
+# ReLU 함수
+def relu(x):
+    return np.maximum(0, x)
 
-# 시그모이드 함수 출력
-x = np.arange(-5.0, 5.0, 0.1)
-y = sigmoid(x)
-plt.plot(x, y)
-plt.ylim(-0.1, 1.1)  # y축의 범위 지정
-plt.show()
+if __name__ == "__main__" :
+    # 계단함수 출력
+    x = np.arange(-5.0, 5.0, 0.1)
+    y = step_function2(x)
+    plt.plot(x, y)
+    plt.ylim(-0.1, 1.1)  # y축의 범위 지정
+    plt.show()
+
+    # 시그모이드 함수 출력
+    x = np.arange(-5.0, 5.0, 0.1)
+    y = sigmoid(x)
+    plt.plot(x, y)
+    plt.ylim(-0.1, 1.1)  # y축의 범위 지정
+    plt.show()
 
