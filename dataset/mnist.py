@@ -13,9 +13,12 @@ def load_mnist(normalize=True, flatten=True, one_hot_label=False):
         t_train = _change_one_hot_label(t_train)
         t_test = _change_one_hot_label(t_test)
 
-    if flatten:
-        x_train = x_train.reshape(x_train.shape[0], 784)
-        x_test = x_test.reshape(x_test.shape[0], 784)
+    
+    x_train = x_train.reshape(x_train.shape[0], 784)
+    x_test = x_test.reshape(x_test.shape[0], 784)
+    if not flatten:
+        x_train = x_train.reshape(-1, 28, 28)
+        x_test = x_test.reshape(-1, 28, 28)
 
     return (x_train, t_train), (x_test, t_test)
 
